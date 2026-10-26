@@ -89,12 +89,12 @@ The Arduino firmware and bitmap frames are provided in [`Firmware/ESP32_Mochi.zi
 
 ### Upload
 
-1). Extract `Firmware/ESP32_Mochi.zip`.
-2). Open `ESP32_Mochi/ESP32_Mochi.ino`.
-3). Keep `all_frames.h` alongside the sketch and retain the `frames/` folder if it is referenced by the extracted animation files.
-4). Install the Adafruit GFX and Adafruit SSD1306 libraries through Library Manager.
-5). Select the correct ESP32-C3 board and serial port.
-6). Upload and open Serial Monitor at **115200 baud**.
+1. Extract `Firmware/ESP32_Mochi.zip`.
+2. Open `ESP32_Mochi/ESP32_Mochi.ino`.
+3. Keep `all_frames.h` alongside the sketch and retain the `frames/` folder if it is referenced by the extracted animation files.
+4. Install the Adafruit GFX and Adafruit SSD1306 libraries through Library Manager.
+5. Select the correct ESP32-C3 board and serial port.
+6. Upload and open Serial Monitor at **115200 baud**.
 
 The animation code targets 42 ms per frame (means about 24 FPS).
 
