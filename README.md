@@ -1,6 +1,6 @@
 # ESP32 Mochi
 
-A small animated desktop companion inspired by Dasai Mochi. this is using an ESP32-C3 SuperMini and a 0.96" SSD1306 OLED display. The project comes with a custom KiCad PCB, Gerber files and a very basic Arduino animation firmware that displays the bitmapped frames.
+A small animated desktop companion inspired by Dasai Mochi. this is made by using an ESP32-C3 SuperMini and a 0.96" SSD1306 OLED display. The repo has a custom KiCad PCB, Gerber files and a very basic Arduino animation firmware that displays the bitmapped frames of the 712 GIFs.
 
 <img width="980" height="580" alt="image" src="https://github.com/user-attachments/assets/d95bfdc8-c6dd-47f5-9f71-5e69a23b7073" />
 
@@ -39,7 +39,6 @@ install esp32 board manager: Tools -> Board -> Boards Manager -> search esp32 ->
 | Custom PCB | 1 | Connects the modules |
 | 1×8 female socket headers, 2.54 mm pitch | 2 | ESP32-C3 module sockets |
 | 1×4 female socket header, 2.54 mm pitch | 1 | OLED socket, if using a compatible module |
-| Wires / solder | As needed | Battery and module connections |
 
 you can see the [`BOM.csv`](BOM.csv) for the list of parts.
 
@@ -75,10 +74,10 @@ The Arduino firmware and bitmap frames are provided in [`Firmware/ESP32_Mochi.zi
 
 ## Firmware Installation 
 
-1). Download the raw ESP32_Mochi.zip file
-2). open Arduino IDE
-3). open ESP32_Mochi.ino
-4). upload to your device
+1. Download the raw ESP32_Mochi.zip file
+2. open Arduino IDE
+3. open ESP32_Mochi.ino
+4. upload to your device
 
 ### Requirements for uploading firmware
 
@@ -89,14 +88,14 @@ The Arduino firmware and bitmap frames are provided in [`Firmware/ESP32_Mochi.zi
 
 ### Upload
 
-1. Extract `Firmware/ESP32_Mochi.zip`.
-2. Open `ESP32_Mochi/ESP32_Mochi.ino`.
-3. Keep `all_frames.h` alongside the sketch and retain the `frames/` folder if it is referenced by the extracted animation files.
-4. Install the Adafruit GFX and Adafruit SSD1306 libraries through Library Manager.
-5. Select the correct ESP32-C3 board and serial port.
-6. Upload and open Serial Monitor at **115200 baud**.
+1. extract Firmware/ESP32_Mochi.zip
+2. open the ESP32_Mochi/ESP32_Mochi.ino file
+3. ensure that all_frames.h is in the same directory as the sketch
+4. install the Adafruit GFX and Adafruit SSD1306 libraries using Library Manager
+5. select the correct ESP32-C3 board and serial port
+6. upload the sketch and open the Serial Monitor (with baud rate 115200)
 
-The animation code targets 42 ms per frame (means about 24 FPS).
+The current firmware targets 42 ms per frame (means about 24 FPS).
 
 ## PCB
 
