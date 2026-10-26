@@ -1,4 +1,3 @@
-# ESP32-Mochi
 # ESP32 Mochi
 
 A small animated desktop companion inspired by Dasai Mochi. this is using an ESP32-C3 SuperMini and a 0.96" SSD1306 OLED display. The project comes with a custom KiCad PCB, Gerber files and a very basic Arduino animation firmware that displays the bitmapped frames.
