@@ -65,7 +65,7 @@ The firmware uses the I²C pins given below on the ESP32-C3 SuperMini:-
 
 ### About Power and charging
 
-The USB-C connector on this TP4056 serves as the charging input. The battery should be connected to the actual B+ and B− pins on the module. If your module has OUT+ and OUT− pins, ensure that they are correctly labelled and protected before using them as load outputs.
+The USB-C connector on this TP4056 serves as the charging input. The battery should be connected to the actual B+ and B− pins on the module. If your module has OUT+ and OUT− pins.
 
 
 ## Firmware
