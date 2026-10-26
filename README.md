@@ -2,6 +2,9 @@
 
 A small animated desktop companion inspired by Dasai Mochi. this is using an ESP32-C3 SuperMini and a 0.96" SSD1306 OLED display. The project comes with a custom KiCad PCB, Gerber files and a very basic Arduino animation firmware that displays the bitmapped frames.
 
+<img width="980" height="580" alt="image" src="https://github.com/user-attachments/assets/d95bfdc8-c6dd-47f5-9f71-5e69a23b7073" />
+
+
 ## Details
 
 1) ESP32-C3 SuperMini as the controller
@@ -38,7 +41,7 @@ install esp32 board manager: Tools -> Board -> Boards Manager -> search esp32 ->
 | 1×4 female socket header, 2.54 mm pitch | 1 | OLED socket, if using a compatible module |
 | Wires / solder | As needed | Battery and module connections |
 
-See [`BOM.csv`](BOM.csv) for the parts list. Exact module dimensions and pin order can vary between suppliers; check your physical parts before assembly.
+you can see the [`BOM.csv`](BOM.csv) for the list of parts.
 
 ## Display
 
@@ -50,7 +53,7 @@ The OLED is connected directly to the ESP32-C3.
 
 ## Pin connections
 
-The firmware uses the following I²C pins on the ESP32-C3 SuperMini:
+The firmware uses the I²C pins given below on the ESP32-C3 SuperMini:-
 
 | Signal | ESP32-C3 pin |
 |---|---|
@@ -61,9 +64,9 @@ The firmware uses the following I²C pins on the ESP32-C3 SuperMini:
 | TTP223 output | GPIO3 |
 
 
-### Power and charging
+### About Power and charging
 
-The TP4056's USB-C connector is the charging input when using a module with an onboard USB-C port. Connect the battery to the module's actual `B+` and `B−` terminals. If your module exposes `OUT+` and `OUT−`, verify the markings and protection circuit before using them as load outputs.
+The USB-C connector on this TP4056 serves as the charging input. The battery should be connected to the actual B+ and B− pins on the module. If your module has OUT+ and OUT− pins, ensure that they are correctly labelled and protected before using them as load outputs.
 
 
 ## Firmware
@@ -72,41 +75,44 @@ The Arduino firmware and bitmap frames are provided in [`Firmware/ESP32_Mochi.zi
 
 ## Firmware Installation 
 
-1. Download the raw ESP32_Mochi.zip file
-2. open Arduino IDE
-3. open ESP32_Mochi.ino
-4. upload to your device
+1). Download the raw ESP32_Mochi.zip file
+2). open Arduino IDE
+3). open ESP32_Mochi.ino
+4). upload to your device
 
 ### Requirements for uploading firmware
 
-- Arduino IDE
-- ESP32 Arduino core
-- **Adafruit GFX Library**
-- **Adafruit SSD1306**
+1) Arduino IDE
+2) ESP32 Arduino core
+3) **Adafruit GFX Library**
+4) **Adafruit SSD1306**
 
 ### Upload
 
-1. Extract `Firmware/ESP32_Mochi.zip`.
-2. Open `ESP32_Mochi/ESP32_Mochi.ino`.
-3. Keep `all_frames.h` alongside the sketch and retain the `frames/` folder if it is referenced by the extracted animation files.
-4. Install the Adafruit GFX and Adafruit SSD1306 libraries through Library Manager.
-5. Select the correct ESP32-C3 board and serial port.
-6. Upload and open Serial Monitor at **115200 baud**.
+1). Extract `Firmware/ESP32_Mochi.zip`.
+2). Open `ESP32_Mochi/ESP32_Mochi.ino`.
+3). Keep `all_frames.h` alongside the sketch and retain the `frames/` folder if it is referenced by the extracted animation files.
+4). Install the Adafruit GFX and Adafruit SSD1306 libraries through Library Manager.
+5). Select the correct ESP32-C3 board and serial port.
+6). Upload and open Serial Monitor at **115200 baud**.
 
-The animation code targets 42 ms per frame (about 24 FPS). The actual frame rate depends on OLED refresh time and I²C performance.
+The animation code targets 42 ms per frame (means about 24 FPS).
 
-## PCB files
+## PCB
 
-The [`PCB/`](PCB/) folder contains the KiCad schematic, PCB layout, project settings, and a Gerber archive.
+The [`PCB/`](PCB/) folder contains the KiCad schematic, PCB layout, project settings, and a Gerber files zip.
 
-The [`Production/`](Production/) folder contains a copy of the Gerber archive for fabrication.
+The [`Production/`](Production/) folder contains a copy of the Gerber files for fabrication.
 
-Before ordering:
-1. Open the `.kicad_pcb` file in KiCad and inspect the front and back.
-2. Open the Gerber archive in KiCad Gerber Viewer.
-3. Confirm copper, solder mask, silkscreen, drill files, and `Edge.Cuts` outline are present.
-4. Run DRC again after any design changes.
-5. Check physical connector and module dimensions against your actual parts.
+<img width="961" height="591" alt="image" src="https://github.com/user-attachments/assets/de5a71df-b01e-4675-bbd0-179ed10dd1cd" />
+
+<img width="951" height="581" alt="image" src="https://github.com/user-attachments/assets/dda3b965-639a-45d8-91fa-da975e654d29" />
+
+<img width="496" height="326" alt="image" src="https://github.com/user-attachments/assets/7750ec52-decf-45af-84c2-f72194fd31dc" />
+
+<img width="393" height="282" alt="image" src="https://github.com/user-attachments/assets/484dfc6f-9038-4114-afed-66bea2e9c80b" />
+
+
 
 ## Repository structure
 
@@ -125,12 +131,6 @@ ESP32-Mochi/
 ├── LICENSE
 └── README.md
 ```
-
-## Credits
-
-- Inspired by the Dasai Mochi concept.
-- OLED animation uses the Adafruit GFX and Adafruit SSD1306 libraries.
-- Designed by [Izaan Hussain](https://github.com/izaanhussain).
 
 ## License
 
